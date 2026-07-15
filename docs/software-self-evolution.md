@@ -106,4 +106,3 @@ ACTIVE → DEGRADED → FROZEN → RECOVERING → ACTIVE
 - 替人做产品价值判断或最终发布批准。
 
 我们追求的不是“人退出系统”，而是让人的注意力集中在价值、风险与最后决定上。
-

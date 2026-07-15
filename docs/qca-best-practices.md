@@ -103,4 +103,3 @@ feedback → cluster → work item → job/run → branch/PR → head SHA
 当核心指标恶化、证据链断裂、权限漂移或安全审计异常时，系统首先冻结变更，而不是继续重试。
 
 一个能停止的 Agent 系统，才有资格长期运行。
-
