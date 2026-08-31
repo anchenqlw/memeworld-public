@@ -1,0 +1,17 @@
+# 云上原创书目基因 v1 · 最后更新 2026-08-26
+# 来源：玩家提案 prop_f286b2d3；Owner 2026-08-06 决策 4、14 授权 Agent 定稿。
+# 只作为无有效主人 book 成长卡片时的低频阅读兜底；标题与梗概均为本项目原创。
+
+books:
+  - id: book-cloud-wind-pocket
+    title: 把风装进口袋的方法
+    brief: 一只住在高塔上的小猫记录不同风声，最后明白收藏不是占有，而是记住风来过的方向。
+    rights: original
+  - id: book-cloud-night-lantern
+    title: 夜航灯的第七码
+    brief: 守灯猫每晚为迷路的云朵点灯，第七码没有写在手册里，需要它从旅人的故事中找到。
+    rights: original
+  - id: book-cloud-rain-library
+    title: 雨滴图书馆借阅记
+    brief: 每一滴雨都带着一页短故事，借书的小猫必须在太阳出来前把最喜欢的一页讲给朋友听。
+    rights: original

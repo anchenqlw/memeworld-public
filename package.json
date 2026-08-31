@@ -1,0 +1,24 @@
+{
+  "name": "meme",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "22.x"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm run dev -w @meme/server\" \"npm run dev -w @meme/web\"",
+    "build": "npm run build -w @meme/server && npm run build -w @meme/web",
+    "test": "npm run test -w @meme/server && npm run test -w @meme/web",
+    "start": "npm run start -w @meme/server",
+    "db:migrate": "npm run db:migrate -w @meme/server",
+    "test:postgres": "npm run test:postgres -w @meme/server",
+    "test:redis": "npm run test:redis -w @meme/server",
+    "world:sync": "npm run world:sync -w @meme/server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

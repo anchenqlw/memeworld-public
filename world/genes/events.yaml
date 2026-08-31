@@ -1,0 +1,30 @@
+# 事件基因库 v1 · 最后更新 2026-07-04
+# 写入权限：仅人工审批。Agent 只读、只组合。
+
+event_templates:
+  - id: gene-evt-celestial
+    name: 天象奇观
+    desc_template: 某种罕见天象出现（流星雨/双彩虹/极光…），目击的猫获得启发
+    attr_bonus_pool: [insight]
+    duration: 当日
+  - id: gene-evt-gathering
+    name: 小小集会
+    desc_template: 当地举办一场小集会（茶会/市集/歌谣夜…），参与的猫结识新朋友
+    attr_bonus_pool: [affinity]
+    duration: 当日
+  - id: gene-evt-discovery
+    name: 意外发现
+    desc_template: 角落里藏着被遗忘的小物（旧地图/漂流瓶/褪色照片…），好奇的猫有所收获
+    attr_bonus_pool: [curiosity]
+    duration: 当日
+  - id: gene-evt-challenge
+    name: 小小考验
+    desc_template: 一段需要勇气的小路（摇晃的吊桥/黑黢黢的隧道…），走过去的猫更勇敢
+    attr_bonus_pool: [courage]
+    duration: 当日
+
+composition_rules:
+  binding: 事件必须绑定到 atlas 中已存在的地点
+  bonus: attr_bonus 只能从该模板的 attr_bonus_pool 中选 1 项，数值固定 +1
+  id_format: "evt-<英文kebab-case>"
+  daily_limit: 全服同日生效事件 ≤3 个

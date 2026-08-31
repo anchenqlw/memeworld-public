@@ -1,0 +1,33 @@
+basemap_version: world-v3
+min_zoom: 1
+max_zoom: 2.6
+regions:
+  - id: region-north-clouds
+    name: 北境云海
+    center: { x: 25, y: 20 }
+    bounds: { x: 2, y: 2, width: 48, height: 36 }
+    mood: 高空、清风与远望
+  - id: region-heartlands
+    name: 中央晴原
+    center: { x: 48, y: 53 }
+    bounds: { x: 24, y: 30, width: 42, height: 42 }
+    mood: 村落、茶香与旧风车
+  - id: region-starlake-green
+    name: 星湖绿境
+    center: { x: 78, y: 68 }
+    bounds: { x: 60, y: 43, width: 38, height: 53 }
+    mood: 湖光、雾林与云港
+  - id: region-sky-rim
+    name: 天际浮岛
+    center: { x: 83, y: 23 }
+    bounds: { x: 64, y: 2, width: 34, height: 40 }
+    mood: 浮岛、风铃与云巅
+  - id: region-lunar-starsea
+    name: 月海星原
+    center: { x: 57, y: 16 }
+    bounds: { x: 51, y: 3, width: 12, height: 26 }
+    mood: 月尘、星河与长夜远行
+reserved_areas:
+  - { x: 24, y: 16, radius: 6, reason: 云端灯塔 }
+  - { x: 55, y: 52, radius: 6, reason: 猫掌茶屋 }
+  - { x: 78, y: 70, radius: 6, reason: 星湖岸 }

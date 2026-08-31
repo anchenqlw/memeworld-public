@@ -1,0 +1,86 @@
+# 地点基因库 v1 · 最后更新 2026-07-29
+# 写入权限：仅人工审批。Agent 只读、只组合。
+
+terrain:            # 地貌基因
+  - id: gene-terrain-cloudpeak
+    name: 云峰
+    desc: 高耸入云的山峰，云海在脚下翻涌
+  - id: gene-terrain-floating-isle
+    name: 浮空岛
+    desc: 悬浮在天空中的小岛，边缘垂着藤蔓
+  - id: gene-terrain-starlake
+    name: 星湖
+    desc: 倒映星光的静谧湖泊
+  - id: gene-terrain-windmill-hill
+    name: 风车丘
+    desc: 长满软草的缓坡，立着吱呀作响的老风车
+  - id: gene-terrain-mist-forest
+    name: 雾林
+    desc: 常年缭绕薄雾的针叶林
+  - id: gene-terrain-cloud-harbor
+    name: 云港
+    desc: 云船停靠的码头，来来往往都是旅人
+  - id: gene-terrain-seaside
+    name: 海滨
+    desc: 海潮往复拍岸的滨海地带，地平线尽头可见海上日落
+  - id: gene-terrain-lunar-mare
+    name: 月球静海
+    desc: 悬在云层之上的月尘原野，浅色环形山像凝住的潮汐
+  - id: gene-terrain-star-river
+    name: 星潮天河
+    desc: 星光汇成的缓慢天河，沿银蓝色光带穿行便能越过长夜
+  - id: gene-terrain-moonstep-corridor
+    name: 月阶回廊
+    desc: 月尘浮石铺成的高空长阶，一端连着云海，一端伸向星原
+
+atmosphere:         # 氛围基因
+  - id: gene-atmo-serene
+    name: 宁静
+    mood_tags: [宁静, 治愈]
+  - id: gene-atmo-lively
+    name: 热闹
+    mood_tags: [热闹, 欢快]
+  - id: gene-atmo-mysterious
+    name: 神秘
+    mood_tags: [神秘, 探索]
+  - id: gene-atmo-nostalgic
+    name: 怀旧
+    mood_tags: [怀旧, 温柔]
+  - id: gene-atmo-adventurous
+    name: 冒险
+    mood_tags: [刺激, 勇敢]
+
+artifact:           # 特色物件基因
+  - id: gene-art-lighthouse
+    name: 老灯塔
+  - id: gene-art-teahouse
+    name: 猫掌茶屋
+  - id: gene-art-postbox
+    name: 云间邮筒
+  - id: gene-art-telescope
+    name: 黄铜望远镜
+  - id: gene-art-bell
+    name: 风铃塔
+  - id: gene-art-market-stalls
+    name: 集市摊位
+
+# #113 原创主题地图包。只编排已有地点与打卡印记，不引入第三方 IP，
+# 也不产生勋章或穿戴物；玩家进度仍由 /api/v1/world/map 的 checkin 事实派生。
+theme_packs:
+  - id: theme-moonlit-keepsakes
+    name: 月海拾光
+    rights: original
+    location_ids: [loc-moon-silent-sea, loc-starsea-ferry, loc-moonstep-corridor]
+    milestones:
+      - { visits: 1, label: 初见月尘 }
+      - { visits: 3, label: 拾完星光 }
+    collection: checkin-stamps
+    badge_reward: none
+    outfit_reward: none
+
+# 组合规则（daily-evolution 任务必须遵守）
+composition_rules:
+  new_location: "1 × terrain + 1~2 × atmosphere + 0~2 × artifact"
+  naming: 名字 ≤8 字，需体现所用基因；描述 60~150 字，与基因自洽
+  min_attrs: 冒险氛围的地点可设置 min_attrs（如 courage>=5），其余地点不设门槛
+  id_format: "loc-<英文kebab-case>"

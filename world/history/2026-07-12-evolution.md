@@ -1,0 +1,21 @@
+# 2026-07-12 世界进化记录
+
+- 执行者：人工触发 `tasks/world/daily-evolution.yaml`（creator-agent）
+- 变更类型：MVP 种子事件池补齐（新事件 ×5）
+- 关联 backlog：`evolution/backlog/003-daily-game-loop.md`（Owner 已确认）
+- 变更内容：为三个种子地点补齐可轮换的每日事件，使每处至少有两个事件，并覆盖天象、集会、发现、考验四类事件基因
+- 使用基因：
+  - 云端灯塔：gene-evt-celestial + gene-evt-challenge
+  - 猫掌茶屋：gene-evt-gathering + gene-evt-discovery
+  - 星湖岸：gene-evt-celestial + gene-evt-discovery
+- 新增事件：
+  - `evt-lighthouse-wind-corridor`
+  - `evt-teahouse-story-night`
+  - `evt-teahouse-hidden-recipe`
+  - `evt-starlake-double-reflection`
+  - `evt-starlake-bottle-letter`
+- 灵感来源：Owner 游戏体验评审；保持每日两分钟与 Agent 自主旅行
+- 影响文件：
+  - `world/atlas/locations/loc-cloud-lighthouse.md`
+  - `world/atlas/locations/loc-catpaw-teahouse.md`
+  - `world/atlas/locations/loc-starlake-shore.md`

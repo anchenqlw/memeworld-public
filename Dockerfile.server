@@ -1,0 +1,57 @@
+FROM node:22-bookworm-slim AS build
+WORKDIR /app
+# ISSUES #81：`better-sqlite3` 的 install 脚本是 `prebuild-install || node-gyp rebuild`。
+# 这个回落链上有**两处网络依赖**，任一抖动就让 `npm ci` exit 1、镜像门禁判红。
+# 两处都要消掉，只补一处等于没修——2026-08-06/08-07 实测走过这个弯路：
+#
+#   ① prebuild-install 从 GitHub Releases 下载预编译二进制 → 超时
+#      （`prebuild-install warn install Request timed out`）；
+#   ② 回落到 node-gyp 后：
+#      2a. 镜像无 Python/工具链 → `Could not find any Python installation to use`
+#          → 08-06 装了 python3 make g++（下方 RUN），这一层已解决；
+#      2b. **node-gyp 还要去 nodejs.org 下载 node headers** → `ECONNRESET`
+#          （08-07 实测：`node-v22.23.2-headers.tar.gz` … Client network socket disconnected）。
+#          08-06 我只补了 2a 就以为修好了，其实回落路径只是**往前挪了一步才挂**。
+#
+# 2b 的修法：官方 node 镜像自带 headers（实测 `/usr/local/include/node/{node,v8}.h` 存在），
+# `npm_config_nodedir` 让 node-gyp 直接用本地的，**不再下载**。
+# 2026-08-09 formal 再次证明只修回落仍不够：prebuild-install 本身先等 GitHub Releases，
+# 可耗时 5 分钟后失败，且失败形态受外网控制。现在 npm ci 全局禁 lifecycle script，
+# 再由 trusted Dockerfile 点名从源码重建 better-sqlite3、恢复 esbuild 平台安装器；候选包
+# 不能在依赖安装阶段执行任意脚本，better-sqlite3 也不再访问预编译 artifact 端点。
+#
+# 只装在 build stage，runtime stage（下方第二个 FROM）不受影响，最终镜像不含编译工具链。
+# 更彻底的出口仍开放：把 sqlite 方言改成按需 `await import()`，让 better-sqlite3 真正降为
+# devDependency，production 镜像根本不需要它（它现在是 apps/server/src/db/index.ts:1 的
+# 顶层 import，启动即加载，所以不能简单挪走）——属 L2 服务端改动，另行立项。
+ENV npm_config_nodedir=/usr/local
+RUN apt-get update && apt-get install -y --no-install-recommends python3 make g++ \
+  && rm -rf /var/lib/apt/lists/*
+COPY package.json package-lock.json* .npmrc ./
+COPY apps/server/package.json apps/server/
+RUN npm ci --workspace @meme/server --include-workspace-root=false --ignore-scripts \
+  --registry=https://registry.npmjs.org/ --replace-registry-host=always \
+  --maxsockets=20 --fetch-retries=4 --fetch-retry-mintimeout=10000 \
+  --fetch-retry-maxtimeout=60000 --fetch-timeout=120000 --no-audit --no-fund \
+  && npm rebuild better-sqlite3 --build-from-source \
+  && npm rebuild esbuild
+COPY apps/server apps/server
+COPY templates templates
+COPY tasks tasks
+COPY world world
+RUN npm run build -w @meme/server
+
+FROM node:22-bookworm-slim
+WORKDIR /app
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/apps/server/dist ./dist
+COPY --from=build /app/apps/server/package.json ./
+COPY templates templates
+COPY tasks tasks
+COPY world world
+ENV NODE_ENV=production
+ENV REPO_ROOT=/app
+EXPOSE 3001
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
+  CMD node -e "fetch('http://127.0.0.1:'+(process.env.PORT||'3001')+'/readyz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+CMD ["node", "dist/index.js"]

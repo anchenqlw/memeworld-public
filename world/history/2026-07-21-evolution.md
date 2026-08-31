@@ -1,0 +1,21 @@
+# 2026-07-21 世界进化记录
+
+- 执行者：Owner 授权的 backlog #031 development-agent
+- 变更类型：新地貌基因 + 新地点
+- 关联 backlog：`evolution/backlog/031-seaside-and-cosmic-destinations.md`
+- Owner 授权证据：`evolution/decisions/2026-07-21.md`（main commit `c6d0d44`）
+- 变更内容：追加 `gene-terrain-seaside` 海滨地貌基因，并以它组合首个海上日落地点 `loc-sunset-tide-bay`（落日潮湾）；未使用星湖或云港地貌冒充海滨，未加入太空方向内容。
+- 使用基因：
+  - 地点：gene-terrain-seaside + gene-atmo-serene + gene-atmo-nostalgic + gene-art-lighthouse
+  - 事件：gene-evt-celestial + gene-evt-discovery
+- 新增地点：
+  - `loc-sunset-tide-bay`（落日潮湾）
+- 灵感来源：玩家提案 `prop_137dcd4e`（希望增加海边）与 `prop_e48c3a6d`（希望看海上日落），经 backlog #031 与 Owner 授权进入本次进化。
+- 贡献署名：无（未取得公开署名授权）
+- 影响文件：
+  - `world/genes/locations.yaml`
+  - `world/atlas/README.md`
+  - `world/atlas/locations/loc-sunset-tide-bay.md`
+  - `world/history/README.md`
+  - `world/history/chronicle.yaml`
+  - `world/history/2026-07-21-evolution.md`

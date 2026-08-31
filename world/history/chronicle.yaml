@@ -1,0 +1,173 @@
+version: 1
+entries:
+  - id: chronicle-2026-07-04-genesis
+    date: "2026-07-04"
+    title: 云上世界诞生
+    summary: 云端灯塔、猫掌茶屋与星湖岸成为首批可旅行地点，云猫的世界从三种不同气氛开始生长。
+    change_type: 创世
+    source_kind: seed
+    proposal_id: null
+    contributor_cat_name: null
+    history_file: world/history/2026-07-04-genesis.md
+  - id: chronicle-2026-07-12-event-pool
+    date: "2026-07-12"
+    title: 每日见闻开始轮换
+    summary: 三个种子地点迎来五种新事件，小猫每天出门都可能遇见不同的天象、集会、发现与考验。
+    change_type: 新事件
+    source_kind: owner
+    proposal_id: null
+    contributor_cat_name: null
+    history_file: world/history/2026-07-12-evolution.md
+  - id: chronicle-2026-07-13-world-v1
+    date: "2026-07-13"
+    title: 云图志扩展为四大区域
+    summary: 世界底图完成分层，并新增八个地点；云猫如今可以在十一处目的地之间持续探索。
+    change_type: 新地点
+    source_kind: owner
+    proposal_id: null
+    contributor_cat_name: null
+    history_file: world/history/2026-07-13-evolution.md
+  - id: chronicle-2026-07-21-sunset-tide-bay
+    date: "2026-07-21"
+    title: 海上日落抵达云猫世界
+    summary: 海滨成为新的地貌，落日潮湾也随之开放；小猫现在可以坐在潮声里，看霞光沉入真正的海平线。
+    change_type: 新地点
+    source_kind: owner
+    proposal_id: null
+    contributor_cat_name: null
+    history_file: world/history/2026-07-21-evolution.md
+  - id: chronicle-2026-07-23-starlake-sunrise
+    date: "2026-07-23"
+    title: 星湖岸迎来清晨的日出
+    summary: 星湖岸新增「湖上晨曦」事件；守到日出的小猫会看见星影退入水中，从此这片湖畔既能看星落、也能看日升。
+    change_type: 新事件
+    source_kind: owner
+    proposal_id: null
+    contributor_cat_name: null
+    history_file: world/history/2026-07-23-evolution.md
+  - id: chronicle-2026-07-26-nine-wishes
+    date: "2026-07-26"
+    title: 九个心愿同日实现
+    summary: 九位旅人的建议在同一天全部上线——云图志记得每次到访、行囊记得每件宝贝的来历、手账长出主题标签、天性有了刻度、羁绊学会提示、留言跟进聊天窗、今日见闻一点即达。这个世界又向「懂你」走近了一步。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: null
+    contributor_cat_name: null
+    history_file: world/history/2026-07-26-evolution.md
+  - id: chronicle-2026-07-29-travel-wish-and-wandering
+    date: "2026-07-29"
+    title: 心愿与流浪
+    summary: 主人现在可以在云图志为小猫许下一个目的地心愿，下次出门它会优先往那里去；打开流浪模式，猫舍便化作一张流浪卡片——它正带着你的愿望，在云海深处漫游。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_dc063be1
+    contributor_cat_name: null
+    history_file: world/history/2026-07-29-evolution.md
+  - id: chronicle-2026-07-29-badge-hints
+    date: "2026-07-29"
+    title: 勋章有了自己的说明书
+    summary: 勋章墙的每一枚勋章现在都写明了获得方式——还没点亮的会告诉你「如何点亮」，点亮了的记着它的来历和日期。收集之路从此有了地图。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_c60b87ab
+    contributor_cat_name: null
+    history_file: world/history/2026-07-29-badge-hints.md
+  - id: chronicle-2026-07-29-lunar-starsea
+    date: "2026-07-29"
+    title: 月海星原在云层之上亮起
+    summary: 第五片区域沿星湖的星光向上生长，月球静海、星海渡口与月阶回廊从此成为需要成长后才能抵达的远方。
+    change_type: 新区域
+    source_kind: community
+    proposal_id: prop_ee838621
+    contributor_cat_name: null
+    history_file: world/history/2026-07-29-cosmic-region.md
+  - id: chronicle-2026-08-03-appearance-repaint
+    date: "2026-08-03"
+    title: 画得不像它？可以重新画
+    summary: 形象确认之后，若觉得云端画师画得不像，现在可以请它重新画一张——新图由你决定换上还是保留原来的，猫的样子始终由你点头才改变。会用到云端画笔，故有次数限制并事先告知。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_b484a28c
+    contributor_cat_name: null
+    history_file: world/history/2026-08-03-evolution.md
+  - id: chronicle-2026-08-03-model-change
+    date: "2026-08-03"
+    title: 想换一种画笔，不必重新养一只猫
+    summary: 建猫时选定的模型从此可在设置里更换——换了之后云端画师悄悄换上新笔，而猫的记忆、去过的地方与聊过的天都不会丢；当前画笔若已停供会红字提醒更换。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_bee5b8c7
+    contributor_cat_name: null
+    history_file: world/history/2026-08-03-evolution.md
+  - id: chronicle-2026-08-04-lighter-portraits
+    date: "2026-08-04"
+    title: 画像变轻了
+    summary: 云端画师送来的画像变轻了，通常只有原来的八分之一沉，猫舍因此打开得更快，尤其在路上和信号不好的地方；你看到的画面一点没变，同一只猫、同一个姿态、同一片背景。
+    change_type: 体验升级
+    source_kind: owner
+    proposal_id: null
+    contributor_cat_name: null
+    history_file: world/history/2026-08-04-evolution.md
+  - id: chronicle-2026-08-06-one-answer
+    date: "2026-08-06"
+    title: 它在外面的时候，四处终于都这么说
+    summary: 从前放猫出去流浪，舞台说「正在外面流浪」、名牌却说「在家等你」，进撸猫问它也说在家——因为每处各记一本账，拿不定主意就写「在家」。现在名牌、头像提示、状态点、猫的第一句和今日云图志共用同一处真相，猫的记事本也补了「此刻所在」；流浪时状态点是金色的，不再和「探险受阻」共用一抹橙。顺带撤掉了「点这里看看今日目的地」这句口是心非——许过愿就直接落在那个地方，明信片寄回了就落在它去过的那一处。
+    change_type: 体验升级
+    source_kind: owner   # 运行态实际值：proposal 类型强制署名，而两位报告人 attribution_consent=false（ISSUES #87）
+    proposal_id: prop_dc4945a1
+    contributor_cat_name: null
+    history_file: world/history/2026-08-06-evolution.md
+  - id: chronicle-2026-08-13-personality-edit-path
+    date: "2026-08-13"
+    title: 重画旁边多了一条通往性格的小路
+    summary: 云端画师的重画桌旁如今会直接告诉主人性格在哪里改；沿着入口就能抵达档案里的性格栏，改好再回来，刚才挑中的画像也还在原处等候。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_51475f7a
+    contributor_cat_name: null
+    history_file: world/history/2026-08-13-evolution.md
+  - id: chronicle-2026-08-14-first-auto-release
+    date: "2026-08-14"
+    title: 那条重画到性格的小路，今天真正开进了世界里
+    summary: 昨天的入口终于走完最后一步来到线上。玩家看到的东西没变——变的是它这次由这条星轨自己一步步送到；从今以后，同类的小体验修补不必再等人手推动。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_51475f7a
+    contributor_cat_name: null
+    history_file: world/history/2026-08-14-evolution.md
+  - id: chronicle-2026-08-26-gentler-encounters
+    date: "2026-08-26"
+    title: 路上的相逢学会了留白
+    summary: 小猫的旅途不再每次都被相逢挤满；熟悉的两只猫再次碰面，也会在辨路、看风景和暖光歇脚之间留下不同画面。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_137ef3a8
+    contributor_cat_name: null
+    history_file: world/history/2026-08-26-evolution.md
+  - id: chronicle-2026-08-30-travel-day-clock
+    date: "2026-08-30"
+    title: 云图志学会看懂日晷
+    summary: 小猫仍按上海自然日每天旅行一次；云图志如今会说明今天的次数是否可用，并在归来后报出离午夜刷新还有多久，不再让主人猜测含糊的“下次”。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_c0519aab
+    contributor_cat_name: null
+    history_file: world/history/2026-08-30-evolution.md
+  - id: chronicle-2026-08-31-travel-clock-calibration
+    date: "2026-08-31"
+    title: 日晷的刻度更清楚了
+    summary: 云图志的旅行日晷校准了整点、午夜和同时请求的边界；每日一次与午夜刷新仍按原样守住。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_c0519aab
+    contributor_cat_name: null
+    history_file: world/history/2026-08-31-evolution.md
+  - id: chronicle-2026-08-26-moonlit-keepsakes
+    date: "2026-08-26"
+    title: 月海有了拾光的足迹
+    summary: 月球静海、星海渡口与月阶回廊连成原创的「月海拾光」旅程；每到一处便收下一枚地点印记，走完整条星路也不会颁发勋章或替小猫换上装扮。
+    change_type: 体验升级
+    source_kind: community
+    proposal_id: prop_0ece081c
+    contributor_cat_name: null
+    history_file: world/history/2026-08-26-evolution.md

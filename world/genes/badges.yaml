@@ -1,0 +1,34 @@
+# 勋章基因库 v1 · 最后更新 2026-07-05
+# 写入权限：仅人工审批。
+# 颁发方式：服务端根据行为账本（travels 等）自动判定，不经过猫的 Agent。
+
+badges:
+  - id: badge-first-trip
+    name: 初次远行
+    desc: 完成第一次旅行
+    rule: travels_count >= 1
+  - id: badge-week-streak
+    name: 七日行者
+    desc: 连续 7 天完成旅行
+    rule: consecutive_travel_days >= 7
+  - id: badge-mood-collector
+    name: 氛围收藏家
+    desc: 到访过宁静、热闹、神秘三种氛围的地点
+    rule: distinct_mood_tags >= 3
+  - id: badge-first-arrival
+    name: 开路先锋
+    desc: 全服第一个到达某个新地点
+    rule: first_server_arrival == true
+  - id: badge-proposal-shipped
+    name: 造世者
+    desc: 你的提案被采纳并上线（进化日报署名）
+    rule: proposal_shipped_count >= 1
+  - id: badge-full-attr
+    name: 圆满天性
+    desc: 任一维度属性达到 10
+    rule: max_attr >= 10
+
+rules:
+  - 判定时机：/travels/report 落库后、提案 shipped 状态流转后
+  - 勋章不可撤销、不可重复颁发
+  - 新增勋章 = L1 变更（PR 人审）

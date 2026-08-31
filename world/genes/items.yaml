@@ -1,0 +1,57 @@
+# 穿戴物基因库 v1 · 最后更新 2026-07-13
+# 写入权限：仅人工审批（新增部件 = L1 变更，需配套水彩美术资产）。
+# 获得方式：旅行事件掉落（服务端按 drop 规则判定，不信任猫自报）。
+
+slots: [head, neck, back]   # 穿戴槽位：头 / 颈 / 背
+
+items:
+  - id: item-straw-hat
+    name: 小草帽
+    kind: wearable
+    slot: head
+    asset: item-straw-hat
+    desc: 檐边有些毛糙的草帽，挡云端的太阳刚刚好
+    drop: { event_gene: gene-evt-gathering, chance: 0.3 }
+  - id: item-red-scarf
+    name: 红围巾
+    kind: wearable
+    slot: neck
+    asset: item-red-scarf
+    desc: 温暖的水彩红，风里飘起来像一小团晚霞
+    drop: { event_gene: gene-evt-challenge, chance: 0.3 }
+  - id: item-copper-bell
+    name: 小铜铃
+    kind: wearable
+    slot: neck
+    asset: item-copper-bell
+    desc: 走路时叮当作响，胆小的猫也会觉得有伴
+    drop: { event_gene: gene-evt-gathering, chance: 0.2 }
+  - id: item-tiny-backpack
+    name: 小小行囊
+    kind: wearable
+    slot: back
+    asset: item-tiny-backpack
+    desc: 装明信片和小心事的帆布包
+    drop: { event_gene: gene-evt-discovery, chance: 0.3 }
+  - id: item-star-charm
+    name: 星星挂坠
+    kind: wearable
+    slot: back
+    asset: item-star-charm
+    desc: 据说是星湖里捞上来的，夜里会微微发亮
+    drop: { event_gene: gene-evt-celestial, chance: 0.2 }
+  - id: item-creator-bell
+    name: 造物铃
+    kind: wearable
+    slot: neck
+    asset: item-creator-bell
+    desc: 只有让猫咪世界变得更好的同行者才会收到，铃声里藏着一颗被采纳的愿望
+    drop: { event_gene: gene-evt-contribution, chance: 0 }
+
+rules:
+  - 物品类型为 wearable / toy / souvenir / consumable；只有 wearable 可以设置 head / neck / back 槽位
+  - 同一槽位同时只能穿戴一件（前端 PATCH /cats/me/outfit 切换）
+  - 掉落判定由服务端在处理 /travels/report 时按 drop 规则执行
+  - 物品不可转让（Phase 3 猫遇「交换小铺」开放后另立规则）
+  - 造物铃不参与旅行掉落，仅在玩家提案上线后由贡献账本颁发
+  - 主题地图包只收集旅行打卡产生的地点印记；首期不掉落物品、不颁发勋章或 wearable，不恢复已退役的装扮方案
